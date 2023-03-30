@@ -25,4 +25,4 @@ func _physics_process(_delta):
 	if velocity.length_squared() > 0:
 		velocity = velocity.normalized() * SPEED
 		move_and_slide()
-		emit_signal("moving", self)
+		emit_signal("moving")
