@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Solitude"
+run/main_scene="res://scenes/field.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Constants="*res://classes/Constants.gd"
 
 [rendering]
 
