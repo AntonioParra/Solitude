@@ -1,4 +1,5 @@
 extends Node2D
+class_name Player
 
 @onready var tilemap: TileMap = $TileMap
 @onready var player: Node2D = $Player

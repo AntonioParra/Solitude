@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal moving
 
-const SPEED : float = 300.0
+const SPEED : float = Constants.base_speed
 
 @onready var sprite: Sprite2D = $Sprite2D
 
