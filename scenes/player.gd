@@ -1,10 +1,10 @@
-extends CharacterBody2D
-
-signal moving
+class_name Player extends CharacterBody2D
 
 const SPEED : float = Constants.base_speed
 
 @onready var sprite: Sprite2D = $Sprite2D
+
+signal moving
 
 func _ready():
 	sprite.scale = Constants.character_scale * 1.25

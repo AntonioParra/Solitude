@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0e3tfqh1l6of"]
+[gd_scene load_steps=12 format=3 uid="uid://c0e3tfqh1l6of"]
 
 [ext_resource type="Script" path="res://scenes/field.gd" id="1_uqgu2"]
 [ext_resource type="Texture2D" uid="uid://b6ugim5v73orn" path="res://assets/img/tiles/greenTile0.png" id="2_c6agt"]
 [ext_resource type="Texture2D" uid="uid://bw7ibqccd57gj" path="res://assets/img/tiles/greenTile1.png" id="3_ghskn"]
 [ext_resource type="Texture2D" uid="uid://b7jh2cppo53t8" path="res://assets/img/tiles/greenTile2.png" id="4_28fs6"]
 [ext_resource type="PackedScene" uid="uid://dqluvkcr31lus" path="res://scenes/player.tscn" id="5_d7fmw"]
+[ext_resource type="AudioStream" uid="uid://cpmajhlogjgia" path="res://assets/sounds/screamFemale1.mp3" id="6_m3che"]
+[ext_resource type="AudioStream" uid="uid://cm2d84i2ke12o" path="res://assets/sounds/screamFemale2.mp3" id="7_jpwho"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6h20o"]
 texture = ExtResource("2_c6agt")
@@ -36,6 +38,17 @@ tile_set = SubResource("TileSet_cfqim")
 cell_quadrant_size = 64
 format = 2
 
-[node name="Player" parent="." instance=ExtResource("5_d7fmw")]
+[node name="Entities" type="Node2D" parent="."]
+y_sort_enabled = true
 
-[connection signal="moving" from="Player" to="." method="_on_player_moving"]
+[node name="Player" parent="Entities" instance=ExtResource("5_d7fmw")]
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Scream1" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("6_m3che")
+
+[node name="Scream2" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("7_jpwho")
+
+[connection signal="moving" from="Entities/Player" to="." method="_on_player_moving"]

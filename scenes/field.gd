@@ -1,8 +1,12 @@
 extends Node2D
-class_name Player
 
 @onready var tilemap: TileMap = $TileMap
-@onready var player: Node2D = $Player
+@onready var player: Node2D = $Entities/Player
+@onready var entities: Node2D = $Entities
+@onready var scream1: AudioStreamPlayer = $Sounds/Scream1
+@onready var scream2: AudioStreamPlayer = $Sounds/Scream2
+
+var character_scene = preload("res://scenes/Character.tscn");
 
 func _ready():
 	randomize()
@@ -37,3 +41,25 @@ func set_cell(map_position: Vector2i):
 	else:
 		tile_index = 1
 	tilemap.set_cell(0, map_position, tile_index, Vector2i.ZERO)
+	
+	var rand_index_2: int = randi() % 10
+	if rand_index_2 < 1:
+		spawn_character(map_position)
+	
+func spawn_character(map_position: Vector2i):
+	var instance = character_scene.instantiate()
+	instance.position = map_position * tilemap.tile_set.tile_size.x
+	instance.flee_target = player
+	instance.connect("flee", try_play_scream)
+	entities.add_child(instance)
+
+func try_play_scream():
+	var index = randi() % 2
+	var audio: AudioStreamPlayer = null
+	if index == 0:
+		audio = scream1
+	elif index == 1:
+		audio = scream2
+		
+	if not audio.playing:
+		audio.play()
