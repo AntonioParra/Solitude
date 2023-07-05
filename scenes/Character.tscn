@@ -10,3 +10,8 @@ script = ExtResource("1_wvy1p")
 position = Vector2(0, -1)
 scale = Vector2(3, 3)
 texture = ExtResource("2_oa8st")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
