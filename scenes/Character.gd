@@ -6,8 +6,8 @@ signal flee
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var timer: Timer = $Timer
 
-const WALK_SPEED = Constants.base_speed
-const FLEE_SPEED = WALK_SPEED * 1.4
+const WALK_SPEED = Constants.base_speed * 0.9
+const FLEE_SPEED = Constants.base_speed * 1.2
 const FLEE_DISTANCE = 150
 const FLEE_DISTANCE_SQUARED = FLEE_DISTANCE * FLEE_DISTANCE
 
