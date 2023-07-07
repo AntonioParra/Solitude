@@ -51,4 +51,7 @@ stream = ExtResource("6_m3che")
 [node name="Scream2" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("7_jpwho")
 
+[node name="Scream3" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("6_m3che")
+
 [connection signal="moving" from="Entities/Player" to="." method="_on_player_moving"]

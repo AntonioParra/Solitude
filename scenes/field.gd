@@ -5,6 +5,7 @@ extends Node2D
 @onready var entities: Node2D = $Entities
 @onready var scream1: AudioStreamPlayer = $Sounds/Scream1
 @onready var scream2: AudioStreamPlayer = $Sounds/Scream2
+@onready var scream3: AudioStreamPlayer = $Sounds/Scream3
 
 var character_scene = preload("res://scenes/Character.tscn");
 
@@ -54,12 +55,14 @@ func spawn_character(map_position: Vector2i):
 	entities.add_child(instance)
 
 func try_play_scream():
-	var index = randi() % 2
+	var index = randi() % 3
 	var audio: AudioStreamPlayer = null
 	if index == 0:
 		audio = scream1
 	elif index == 1:
 		audio = scream2
+	elif index == 2:
+		audio = scream3
 		
 	if not audio.playing:
 		audio.play()

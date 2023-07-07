@@ -36,13 +36,14 @@ func start_wandering() -> void:
 	fleeing = false
 	
 func start_fleeing() -> void:
-	timer.stop()
-	timer.start()
-	velocity = (position - flee_target.position).normalized()
-	if velocity.length() == 0:
-		velocity = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
-	fleeing = true
-	emit_signal("flee")
+	if not fleeing:
+		timer.stop()
+		timer.start()
+		velocity = (position - flee_target.position).normalized()
+		if velocity.length() == 0:
+			velocity = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+		fleeing = true
+		emit_signal("flee")
 
 
 func _on_timer_timeout() -> void:
