@@ -17,7 +17,11 @@ func _ready():
 
 func _on_player_moving():
 	fill_tilemap()
-
+	
+func _input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
+		player.target = get_local_mouse_position()
+		
 func fill_tilemap():
 	var player_position: Vector2 = player.position
 	var map_position: Vector2i = tilemap.local_to_map(player_position)
