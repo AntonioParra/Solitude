@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b6ugim5v73orn" path="res://assets/img/tiles/greenTile0.png" id="2_c6agt"]
 [ext_resource type="Texture2D" uid="uid://bw7ibqccd57gj" path="res://assets/img/tiles/greenTile1.png" id="3_ghskn"]
 [ext_resource type="Texture2D" uid="uid://b7jh2cppo53t8" path="res://assets/img/tiles/greenTile2.png" id="4_28fs6"]
-[ext_resource type="PackedScene" uid="uid://dqluvkcr31lus" path="res://scenes/player.tscn" id="5_d7fmw"]
+[ext_resource type="PackedScene" uid="uid://cv2agbct25tc3" path="res://scenes/player.tscn" id="5_d7fmw"]
 [ext_resource type="AudioStream" uid="uid://cpmajhlogjgia" path="res://assets/sounds/screamFemale1.mp3" id="6_m3che"]
 [ext_resource type="AudioStream" uid="uid://cm2d84i2ke12o" path="res://assets/sounds/screamFemale2.mp3" id="7_jpwho"]
 

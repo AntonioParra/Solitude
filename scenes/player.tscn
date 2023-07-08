@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqluvkcr31lus"]
+[gd_scene load_steps=3 format=3 uid="uid://cv2agbct25tc3"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_gfkny"]
-[ext_resource type="Texture2D" uid="uid://x0f5c7gi6nd6" path="res://assets/img/characters/orc.png" id="2_4vjw7"]
+[ext_resource type="Texture2D" path="res://assets/img/characters/orc.png" id="2_4vjw7"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_gfkny")
